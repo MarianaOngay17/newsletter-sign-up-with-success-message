@@ -3,50 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="/css/styles.css">
+
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  <!-- Sign-up form start -->
+  <div class="newsletter">
 
-  Stay updated!
+    <picture class="newsletter__image">
+      <source 
+        media="(min-width: 1200px)" 
+        srcset="/assets/images/illustration-sign-up-desktop.svg" >
+      <source 
+        media="(min-width: 768px)" 
+        srcset="/assets/images/illustration-sign-up-tablet.svg" >
+      <img 
+        src="/assets/images/illustration-sign-up-mobile.svg" 
+        alt="illustration-sign-up">
+    </picture>
 
-  Join 60,000+ product managers receiving monthly updates on:
+    <div class="newsletter__content">
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+        <div class="newsletter__title">
+          Stay updated!
+        </div>
+        <div class="newsletter__description">
+          Join 60,000+ product managers receiving monthly updates on:
+        </div>
 
-  Email address
-  email@company.com
+        <div class="newsletter__list">
+          <div class="newsletter__list newsletter__list--item">
+            <img src="assets/images/icon-list.svg" alt="icon-list">
+            Product discovery and building what matters
+          </div>
+          <div class="newsletter__list newsletter__list--item">
+            <img src="assets/images/icon-list.svg" alt="icon-list">
+            Measuring to ensure updates are a success
+          </div>
+          <div class="newsletter__list newsletter__list--item">
+            <img src="assets/images/icon-list.svg" alt="icon-list">
+            And much more!
+          </div>
+        </div>
 
-  Subscribe to monthly newsletter
+        <form class="newsletter__form">
+          <div class="newsletter__form-text">
+            <label for="email" class="newsletter__email-label">Email address</label>
+            <label for="email" class="newsletter__email-label newsletter__email-label--error hidden">Valid email required</label>
+          </div>
+          <input 
+            type="email" 
+            placeholder="email@company.com" 
+            name="email"
+            class="newsletter__email-input"
+            id="newsletter-email"
+          >
+          <input type="submit" class="newsletter__submit" value="Subscribe to monthly newsletter">
+        </form>
 
-  <!-- Sign-up form end -->
+    </div>
+
+  </div>
 
   <!-- Success message start -->
 
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
+  <div class="success hidden">
+    <img src="assets/images/icon-success.svg" class="success__image">
+    <div class="success__title">
+      Thanks for subscribing!
+    </div>
+    <div class="success__description">
+      A confirmation email has been sent to <span class="success__mail">ash@loremcompany.com</span>.
+      Please open it and click the button inside to confirm your subscription.
+    </div>
+    <div class="success__dismiss">
+      <button class="success__button">Dismiss message</button>
+    </div>
+  </div>
 
   <!-- Success message end -->
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Mariana Ongay Ortiz</a>.
   </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
